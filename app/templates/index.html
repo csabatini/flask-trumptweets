@@ -6,7 +6,15 @@
     <div class="jumbotron">
         <h1>What does Trump say about...</h1>
     </div>
-    <table class="list-group">
-    </table>
+
+    <div id="tag-container">
+        <ul class="nav nav-pills" role="tablist">
+            {% for tag in tags %}
+            <li id="tag" role="presentation"><a href="#">{{ tag.tag }}<span class="badge">{{ tag.count }}</span></a>
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+
 </div> <!-- /container -->
 {% endblock %}

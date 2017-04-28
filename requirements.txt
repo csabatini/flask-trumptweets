@@ -1,0 +1,6 @@
+nose>=1.0
+mock==2.0.0
+blinker==1.4
+requests==2.9.1
+Flask==0.12
+Flask-Testing==0.6.2

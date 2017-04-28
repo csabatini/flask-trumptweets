@@ -1,0 +1,9 @@
+.idea/
+.cache/
+.eggs/
+env/
+*.egg-info/
+*.pyc
+venv/
+*/static/bower_components/
+db.sqlite3

@@ -1,0 +1,40 @@
+<!doctype HTML>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    {% include 'stylesheets.html' %}
+    <title>
+        {% block title %}
+        Trump Says
+        {% endblock %}
+    </title>
+    {% block header %}{% endblock %}
+</head>
+<body>
+<header>
+    <nav class="navbar navbar-default navbar-static-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
+                        aria-expanded="false" aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="{{ url_for('main.index') }}">Trump Says</a>
+            </div>
+            <div id="navbar" class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li><a href="{{ url_for('main.index') }}">About</a></li>
+                    <li><a href="{{ url_for('main.index') }}">Contact</a></li>
+                </ul>
+            </div><!--/.nav-collapse -->
+        </div><!--/container -->
+    </nav>
+</header>
+{% block content%}{% endblock %}
+{% include 'javascripts.html' %}
+</body>
+</html>

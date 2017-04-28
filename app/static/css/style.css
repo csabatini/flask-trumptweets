@@ -1,0 +1,20 @@
+table {
+    table-layout: fixed;
+}
+
+.tc1 { width: 20%; }
+.tc2 { width: 70%; }
+.tc3 { width: 10%; }
+
+.max_created {
+    float: right;
+}
+
+.badge {
+    float: right;
+}
+
+.card-deck {
+    padding-top: 15px;
+    padding-bottom: 15px;
+}

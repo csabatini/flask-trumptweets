@@ -1,0 +1,134 @@
+[
+  {
+    "count": 30,
+    "max_created_at": 1493303965000,
+    "tag": "Democrats",
+    "tag_id": 20
+  },
+  {
+    "count": 58,
+    "max_created_at": 1493247976000,
+    "tag": "President Obama",
+    "tag_id": 6
+  },
+  {
+    "count": 27,
+    "max_created_at": 1493123788000,
+    "tag": "Fake News",
+    "tag_id": 21
+  },
+  {
+    "count": 283,
+    "max_created_at": 1492976896000,
+    "tag": "Hillary Clinton",
+    "tag_id": 1
+  },
+  {
+    "count": 8,
+    "max_created_at": 1492089390000,
+    "tag": "Russia",
+    "tag_id": 22
+  },
+  {
+    "count": 19,
+    "max_created_at": 1486901656000,
+    "tag": "Bernie Sanders",
+    "tag_id": 8
+  },
+  {
+    "count": 9,
+    "max_created_at": 1485726358000,
+    "tag": "Lindsey Graham",
+    "tag_id": 10
+  },
+  {
+    "count": 8,
+    "max_created_at": 1476623703000,
+    "tag": "Bill Clinton",
+    "tag_id": 9
+  },
+  {
+    "count": 20,
+    "max_created_at": 1469536953000,
+    "tag": "Elizabeth Warren",
+    "tag_id": 5
+  },
+  {
+    "count": 4,
+    "max_created_at": 1469483154000,
+    "tag": "Tim Kaine",
+    "tag_id": 18
+  },
+  {
+    "count": 70,
+    "max_created_at": 1462316924000,
+    "tag": "Ted Cruz",
+    "tag_id": 2
+  },
+  {
+    "count": 6,
+    "max_created_at": 1461843108000,
+    "tag": "Carly Fiorina",
+    "tag_id": 12
+  },
+  {
+    "count": 19,
+    "max_created_at": 1461600958000,
+    "tag": "John Kasich",
+    "tag_id": 7
+  },
+  {
+    "count": 59,
+    "max_created_at": 1458762589000,
+    "tag": "Jeb Bush",
+    "tag_id": 3
+  },
+  {
+    "count": 48,
+    "max_created_at": 1458038346000,
+    "tag": "Marco Rubio",
+    "tag_id": 4
+  },
+  {
+    "count": 4,
+    "max_created_at": 1457194205000,
+    "tag": "Rand Paul",
+    "tag_id": 15
+  },
+  {
+    "count": 6,
+    "max_created_at": 1447938453000,
+    "tag": "Ben Carson",
+    "tag_id": 11
+  },
+  {
+    "count": 4,
+    "max_created_at": 1446562154000,
+    "tag": "Scott Walker",
+    "tag_id": 17
+  },
+  {
+    "count": 4,
+    "max_created_at": 1442151692000,
+    "tag": "George Pataki",
+    "tag_id": 14
+  },
+  {
+    "count": 3,
+    "max_created_at": 1439224815000,
+    "tag": "George W. Bush",
+    "tag_id": 19
+  },
+  {
+    "count": 4,
+    "max_created_at": 1437489052000,
+    "tag": "Rick Perry",
+    "tag_id": 16
+  },
+  {
+    "count": 5,
+    "max_created_at": 1437301331000,
+    "tag": "John McCain",
+    "tag_id": 13
+  }
+]

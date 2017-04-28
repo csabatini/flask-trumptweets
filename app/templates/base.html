@@ -1,8 +1,9 @@
-<!doctype HTML>
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     {% include 'stylesheets.html' %}
     <title>
         {% block title %}
@@ -13,7 +14,7 @@
 </head>
 <body>
 <header>
-    <nav class="navbar navbar-default navbar-static-top">
+    <nav class="navbar navbar-inverse navbar-fixed-top">
         <div class="container">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
@@ -25,7 +26,7 @@
                 </button>
                 <a class="navbar-brand" href="{{ url_for('main.index') }}">Trump Says</a>
             </div>
-            <div id="navbar" class="navbar-collapse collapse">
+            <div id="navbar" class="collapse navbar-collapse">
                 <ul class="nav navbar-nav">
                     <li><a href="{{ url_for('main.index') }}">About</a></li>
                     <li><a href="{{ url_for('main.index') }}">Contact</a></li>

@@ -10,8 +10,8 @@
     <div id="tag-container">
         <ul class="nav nav-pills" role="tablist">
             {% for tag in tags %}
-            <li id="tag" role="presentation"><a href="#">{{ tag.tag }}<span class="badge">{{ tag.count }}</span></a>
-            </li>
+            <li id="tag" role="presentation"><a href="{{ url_for('main.tag', tag_id=tag.tag_id) }}">{{ tag.tag }}<span
+                    class="badge">{{ tag.count }}</span></a></li>
             {% endfor %}
         </ul>
     </div>

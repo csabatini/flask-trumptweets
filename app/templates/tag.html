@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container">
+    <div class="page-header">
+        <h1>{{ tag.tag}}</h1>
+    </div>
+    {% for row in status_rows %}
+    <div class="row">
+        {% for col in row %}
+        <div class="col-md-4">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">@realDonaldTrump
+                        <small id="created_at">{{ moment(col.status.created_at).fromNow() }}</small>
+                    </h3>
+                </div>
+                <div class="panel-body">
+                    {{ col.status.text }}
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+    {% endfor %}
+</div> <!-- /container -->
+{% endblock %}

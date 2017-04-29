@@ -1,4 +1,4 @@
-flask-trumpsays
+flask-trumptweets
 ================
 Simple Flask project to consume the TrumpTweets API @ https://trumptweets.slickmobile.us
 
@@ -17,9 +17,12 @@ pip install -r requirements.txt
 bower install
 ```
 
-### Run unit tests & run app using the Flask development server
+### Run unit tests
 ```
 nosetests
-python run.py
+```
 
+### Run app with the Flask development server
+```
+python run.py
 ```

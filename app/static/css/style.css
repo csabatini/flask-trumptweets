@@ -18,6 +18,15 @@ body {
     text-align:center;
 }
 
+.panel {
+    height: 150px;
+}
+
 #tag {
     width: 200px;
+}
+
+#created_at {
+    float: right;
+    margin-top: 5px;
 }

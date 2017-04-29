@@ -1,25 +1,26 @@
+from datetime import datetime
 import requests
 
 base_url = 'https://trumptweets.slickmobile.us/api/v1/'
 
 
 def get_tags():
-    tag_list = get_url_json(base_url + 'tag')
+    tag_list = requests.get(base_url + 'tag').json()
     return {'tags': tag_list}
 
 
 def get_tag_statuses(tag_id):
-    tag = get_url_json(base_url + 'tag', params={'id': tag_id})
-    statuses = get_url_json(base_url + 'status', params={'tag_id': tag_id})
+    tag = requests.get(base_url + 'tag', params={'id': tag_id}).json()
+    epoch_statuses = requests.get(base_url + 'status', params={'tag_id': tag_id}).json()
+
+    # apply timestamp and row partitioning transformations
+    utc_statuses = map(convert_epoch_to_datetime, epoch_statuses)
+    status_rows = partition_status_rows(utc_statuses)
+
     return {
         'tag': tag,
-        'status_rows': partition_status_rows(statuses)
+        'status_rows': status_rows
     }
-
-
-def get_url_json(url, params={}):
-    resp = requests.get(url, params=params)
-    return resp.json()
 
 
 #
@@ -38,3 +39,9 @@ def partition_status_rows(statuses):
         status_rows.append(statuses[((num_rows - 1) * 3 + 3):])
 
     return status_rows
+
+
+def convert_epoch_to_datetime(status_dict):
+    utc_datetime = datetime.utcfromtimestamp(status_dict['status']['created_at'] / 1000.0)
+    status_dict['status']['created_at'] = utc_datetime
+    return status_dict

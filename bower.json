@@ -1,8 +1,8 @@
 {
-  "name": "django-trumptweets",
+  "name": "flask-trumptweets",
   "version": "0.0.0",
-  "homepage": "https://github.com/csabatini/django-trumptweets",
-  "license": "MIT",
+  "homepage": "https://github.com/csabatini/flask-trumptweets",
+  "license": "Apache v2.0",
   "ignore": [
     "**/.*",
     "bower_components",

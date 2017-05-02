@@ -19,12 +19,12 @@ bower install
 
 ### Run unit tests
 ```
-nosetests
+bash run_unit_tests.sh
 ```
 
 ### Run app with the Flask development server
 ```
-python run.py
+python runserver.py
 ```
 
 License

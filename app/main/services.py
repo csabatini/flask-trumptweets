@@ -1,31 +1,45 @@
 from datetime import datetime
+from flask import abort
 import requests
 
 base_url = 'https://trumptweets.slickmobile.us/api/v1/'
 
 
 def get_tags():
-    tag_list = requests.get(base_url + 'tag').json()
-    return {'tags': tag_list}
+    tag_resp = requests.get(base_url + 'tag')
+    handle_api_response(tag_resp)
+    return {'tags': tag_resp.json()}
 
 
 def get_tag_statuses(tag_id):
-    tag = requests.get(base_url + 'tag', params={'id': tag_id}).json()
-    epoch_statuses = requests.get(base_url + 'status', params={'tag_id': tag_id}).json()
+    tag_resp = requests.get(base_url + 'tag', params={'id': tag_id})
+    handle_api_response(tag_resp)
+
+    status_resp = requests.get(base_url + 'status', params={'tag_id': tag_id})
+    handle_api_response(status_resp)
 
     # apply timestamp and row partitioning transformations
-    utc_statuses = map(convert_epoch_to_datetime, epoch_statuses)
-    status_rows = partition_status_rows(utc_statuses)
+    epoch_statuses = status_resp.json()
+    datetime_statuses = map(convert_epoch_to_datetime, epoch_statuses)
+    status_rows = partition_status_rows(datetime_statuses)
 
     return {
-        'tag': tag,
+        'tag': tag_resp.json(),
         'status_rows': status_rows
     }
 
 
 #
-# partition_status_rows is a helper function for dividing a list into a grid (2d list) of x rows by 3 columns
-# If the original number of objects isn't divisible by 3, the remainder (1 or 2) will be in the last row
+# Render an error template in the flask view if the API call is unsuccessful
+#
+def handle_api_response(response):
+    if response.status_code >= 400:
+        abort(response.status_code)
+    return None
+
+
+#
+# Divide a list into a grid (2d list) of rows with up to three columns
 #
 def partition_status_rows(statuses):
     status_count = len(statuses)
@@ -41,6 +55,9 @@ def partition_status_rows(statuses):
     return status_rows
 
 
+#
+# Convert epoch time (milliseconds since 1970-01-01) to a datetime object within a dictionary
+#
 def convert_epoch_to_datetime(status_dict):
     utc_datetime = datetime.utcfromtimestamp(status_dict['status']['created_at'] / 1000.0)
     status_dict['status']['created_at'] = utc_datetime

@@ -1,16 +1,16 @@
 from datetime import datetime
 from app.main import services
 from utils import load_mock_data
-import requests_mock
+import responses
 
 tag_url = 'https://trumptweets.slickmobile.us/api/v1/tag'
 status_url = 'https://trumptweets.slickmobile.us/api/v1/status'
 exp_tag_keys = ['count', 'tag', 'tag_id', 'max_created_at']
 
 
-@requests_mock.mock()
-def test_get_tags(mock_requests):
-    mock_requests.get(tag_url, json=load_mock_data('tags.json'))
+@responses.activate
+def test_get_tags():
+    responses.add(responses.GET, tag_url, json=load_mock_data('tags.json'))
 
     response = services.get_tags()
     # tags response should be a dictionary
@@ -30,10 +30,10 @@ def test_get_tags(mock_requests):
         assert key in response['tags'][0]
 
 
-@requests_mock.mock()
-def test_get_tag_statuses(mock_requests):
-    mock_requests.get(tag_url, json=load_mock_data('tag.json'))
-    mock_requests.get(status_url, json=load_mock_data('statuses.json'))
+@responses.activate
+def test_get_tag_statuses():
+    responses.add(responses.GET, tag_url, json=load_mock_data('tag.json'))
+    responses.add(responses.GET, status_url, json=load_mock_data('statuses.json'))
 
     tag_id = 22
     response = services.get_tag_statuses(tag_id)

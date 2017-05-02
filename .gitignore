@@ -1,9 +1,9 @@
 .idea/
 .cache/
 .eggs/
-env/
+.coverage
 *.egg-info/
 *.pyc
 venv/
-*/static/bower_components/
+*/static/libs/
 db.sqlite3

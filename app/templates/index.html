@@ -1,20 +1,16 @@
 {% extends 'base.html' %}
 {% block content %}
-<div class="container">
+<!-- Main component for a primary marketing message or call to action -->
+<div class="jumbotron">
+    <h1>What does Trump say about...</h1>
+</div>
 
-    <!-- Main component for a primary marketing message or call to action -->
-    <div class="jumbotron">
-        <h1>What does Trump say about...</h1>
-    </div>
-
-    <div id="tag-container">
-        <ul class="nav nav-pills" role="tablist">
-            {% for tag in tags %}
-            <li id="tag" role="presentation"><a href="{{ url_for('main.tag', tag_id=tag.tag_id) }}">{{ tag.tag }}<span
-                    class="badge">{{ tag.count }}</span></a></li>
-            {% endfor %}
-        </ul>
-    </div>
-
-</div> <!-- /container -->
+<div id="tag-container">
+    <ul class="nav nav-pills" role="tablist">
+        {% for tag in tags %}
+        <li id="tag" role="presentation"><a href="{{ url_for('main.tag', tag_id=tag.tag_id) }}">{{ tag.tag }}<span
+                class="badge">{{ tag.count }}</span></a></li>
+        {% endfor %}
+    </ul>
+</div>
 {% endblock %}

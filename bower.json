@@ -5,7 +5,7 @@
   "license": "Apache v2.0",
   "ignore": [
     "**/.*",
-    "bower_components",
+    "libs",
     "test",
     "tests"
   ],
